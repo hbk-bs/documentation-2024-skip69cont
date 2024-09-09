@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semesterdokumentation SoSe2024</title>
+    <link rel="stylesheet" href="style.css"> 
+    
+</head>
+<body>
+
+    <div class="header-container">
+        <h1>Dokumentation Sommersemester 2024</h1>
+    </div>
+
+    <div class="content-container">
+        <div class="text-section">
+            <h2>Large Language Model Ollama</h2>
+            <p>
+            Ein *Large Language Model* (LLM) ist eine Art von künstlicher Intelligenz, die dafür entwickelt wurde, menschliche Sprache zu verstehen und zu erzeugen. Es wird mit sehr vielen Texten trainiert, damit es lernt, wie Sprache funktioniert und wie man auf bestimmte Eingaben sinnvoll antwortet. Diese Modelle erkennen Muster in den Daten und können dadurch zum Beispiel Texte schreiben, Fragen beantworten oder Gespräche führen. <br>
+            <br>
+            Ein gutes Beispiel ist *Ollama*, eine Plattform, die ein eigenes Sprachmodell nutzt. Sie wird mit vielen Textbeispielen gefüttert und kann dann anhand von gelerntem Wissen Texte erzeugen oder auf Anfragen reagieren. Das Modell arbeitet, indem es vorhergesagt, welches Wort am besten als Nächstes in einem Satz passt, basierend auf dem, was es schon gesehen hat. <br>
+            In Meinem Projekt habe ich 2 Modelle des Ollama benutzt, zum einen das Tinyllama, eine kleinere Version des LLM, welche deutlich mehr Zeit zum errechnen von Ergebnissen benötigt, und Ollama3, ein etwas größeres Modell, welches über eine höhere Rechenleistung verfügt. <br>
+            <br>
+            Das Konzept des Projektes bestand darin, eine Aplikation zu bauen, welche in der Lage ist eigenständig 2D Bilder von Häusern zu konstruieren, um Menschen mit weniger Kreativität Inspiration für ein Haus zu geben, das aus mehr als Wand und Dach besteht.
+            Um Dies zu erreichen habe ich in Adobe Illustrator Häuser konstruiert, und mir diese als SVG code ausgeben lassen.
+            Bei SVG handelt es sich um eine Codesprache, die Bildinformationen in Vektoren, Kreisen oder anderen simplen Formen definiert. 
+            <pre>
+                <code>
+                    &lt;svg width="100" height="100"&gt;
+                        &lt;circle cx="50" cy="50" r="40" fill="red" /&gt;
+                      &lt;/svg&gt;
+                </code>
+            </pre>
+            Dieser SVG code beschreibt einen roten Kreis in einem 100px x100px großen bereich mit einem Radius, r="40" und der x,yPosition cx="50", cy="50". <br>
+
+            <br>
+            Ollama3 funktioniert, indem man Rollen vergibt und diesen dann Anweisungen gibt, so zum Beispiel hier,<br> <br> role:`system` <br> content:
+            `
+            You are a SVG generator, you only answer in SVG code. NO markdown. NO backticks. only the svg xml. Black is only apear in the same areas as #D9D9D9. The generated code will be used as real svg.
+              This is the SVG code for a HOUSE everything between three quotes is the example code:
+          <br>
+          Anschließend folgt SVG code als konkretes Beispiel. <br> <br>
+            Durch das verwenden von CAPS wird alles Großgeschriebene priorisiert. Wenn im Output zum Beispiel Markdown geschrieben wird, kann man den Prompt so bearbeiten, dass mit "NO markdown" kein Markdown generiert wird. <br> <br>
+            Mit  role: 'assistant' kann man weitere Daten in den Generationsprozess mit einfließen lassen, in diesem Projekt ist es weiterer SVG code. <br> 
+            Eine Ausschlaggebender Funktion ist die so genannte "temperature". <br>
+            Über diese wird die Kreativität des LLM, beziehungsweise der Spielraum definiert, also bestimmt, wie sehr sich das LLM an die Vorgaben halten soll. <br>
+            Mit einem zu geringen temperature Wert weicht das LLm nahezu nicht von der Beispieldata ab, ist der Wert zu hoch, so kann man kaum Ähnlichkeiten mehr erkennen. <br>
+            <br>
+            Das LLM ist somit trainiert und gibt als Output SVG code, welcher direkt in den Html Code gezeichnet wird. <br>
+            Für mich weicht der Output immernoch nicht weit genug von der Beispieldata ab. zudem benötigt das LLm recht viel Zeit, bis der Output generiert wird. <br>
+            <br>
+
+        Das Projekt ist unter <a href="https://housecreator.netlify.app/">https://housecreator.netlify.app/</a> erreichbar.
+    </p>
+    </div>
+
+        <div class="image-section">
+            <img src="bilder/img1.png" alt="Beispielbild">
+            <div class="image-caption">Beispielbild konstruiert in Illustrator</div>
+            <img src="bilder/img2.png" alt="Beispielbild">
+            <div class="image-caption">Beispielbild konstruiert in Illustrator</div>
+            <img src="bilder/img3.png" alt="Beispielbild">
+            <div class="image-caption">Beispielbild konstruiert in Illustrator</div>
+            <img src="bilder/img4.png" alt="Beispielbild">
+            <div class="image-caption">Beispielbild konstruiert in Illustrator</div>
+        </div>
+    </div>
+
+    <div class="footer-container">
+        <a href="einführung.html" class="footer-link">Einführung</a>
+        <a href="projekt1.html" class="footer-link">Googles Teachable Machine</a>
+        
+        <a href="projekt3.html" class="footer-link">AI Graphic Novel</a>
+        <a href="fazit.html" class="footer-link">Fazit</a>
+    </div>
+
+</body>
+</html>

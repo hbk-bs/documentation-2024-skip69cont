@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semesterdokumentation SoSe2024</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+
+    <div class="header-container">
+        <h1>Dokumentation Sommersemester 2024</h1>
+    </div>
+
+    <div class="content-container">
+        <div class="text-section">
+            <h2>AI Graphic Novel</h2>
+            <p>
+                Generative KI im Bereich der Bilder ist eine Technologie, die eigenständig neue Bilder erschaffen kann, basierend auf gelernten Mustern aus großen Bilddatensätzen. Anstatt nur bestehende Bilder zu verändern, kann sie völlig neue Grafiken, Kunstwerke oder Fotos erzeugen. <br>
+                <br>
+                Diese KI-Modelle lernen durch das Training mit vielen verschiedenen Bildern, welche Formen, Farben und Texturen zusammengehören. Wenn man der KI eine Beschreibung gibt, wie „ein Alien spielt Schlagzeug“, verwendet sie dieses Wissen, um ein neues Bild zu erstellen, das zu dieser Beschreibung passt. Bekannte Beispiele für solche Technologien sind "DALL-E", "Adobe Firefly" oder "Stable Diffusion". <br>
+                <br>
+                Bei meinen Graphic Novel habe ich mich für "Adobe Firefly" entschieden, da diese Aplikation neben Voreinstellungen wie Stil oder Referenzbilder auf die möglichkeit hat in dem Prompt selber noch Justierungen vorzunehmen. <br>
+                So kann man zum Beispiel mit `[avoid = xy]` am Ende eines Firefly-Prompts der KI sagen, dass sie das Konzept in den Klammern weglassen soll, zum Beispiel wird im Prompt eoin Bauernhof beschrieben, möchte man nun keine Schafe, schreibt man dies in die Klammern. Wenn man `[guidance = x]` hinzufügt, erlaubt man der KI, stärker von der Eingabe abzuweichen, wobei die Werte zwischen 0 und 25 liegen. Je niedriger der Wert, desto genauer hält sich die KI an den Prompt. Mit `[raw-style = True]` wird die KI sehr frei in ihrer Interpretation und kann überraschende Ergebnisse liefern, die möglicherweise nur wenig mit dem ursprünglichen Prompt zu tun haben. <br>
+                Diese Justierungen können zu einem besseren Ergebnis führen. <br>
+                <br>
+                Da der Graphic Novel mit künstlicher Intelligenz generiert wird, habe ich nicht nur die Bilder, sondern auch die Prompts dafür, als auch die Geschichte an sich generieren lassen. <br>
+                Um zunächst eine Basisgeschichte zu bekommen, habe ich mir eine Grobe Handlung ausgedacht, unter anderem eine Musikrichtung namens "Cyberpunkrock", Und bestimmte Musikinstrumente, wie das "Stylophon" hinzugefügt, ebenso den Schlagzeuger von Metallica als Lehrmeister des kleinen Alien. <br>
+                Der erste generierte Aufbau der Geschichte ist angefügt. <br>
+                <br>
+                Nach ein wenig mehr Feinjustierung und Korrektur von mir, hat Chat Gpt, das LLM meiner Wahl, die vollständige Geschichte fertig generiert und daraus anschließend die Prompts für Adobe Firefly generiert. <br>
+                Einige der fertigen Prompts sind angefügt. <br>
+                <br>
+                Um einen durchgängigen Stil zu bekommen, habe ich zunächst ein Bild des Alien generieren lassen, dessen Stil dem entspricht, was ich für meinen Graphic Novel anstrebte. <br>
+                Dies hat den Vorteil, dass man nicht bei jedem Neugenerieren sämtliche einstellungen berücksichtigen muss und sich die generierten bilder nicht zu sehr unterscheiden. Farbauswahl und Illustrationsstil sind damit auch bereits definiert. <br>
+                Das Referenzbild wird dem Prompt hinzugefügt. <br>
+                <br>
+                Das Ergebnis ist ein durchgängiger Stil, welcher zu einem einheitlichen Gesammtbild beiträgt.
+                <br>
+                <br>
+                 Mit dem Ergebnis bin ich sehr zufrieden. Es hat Spaß gemacht zu schauen, wie viel man mittlerweile bereits mit simplen künstlichen Intelligenzen erreichen kann und wie man selber Einfluss auf das Ergebnis haben kann um dieses zu optimieren und anzupassen. <br>
+
+                
+                <br>
+                Das fertige Projekt ist unter <a href="https://zippi-und-die-musik.netlify.app/">https://zippi-und-die-musik.netlify.app/</a> zu erreichen.
+
+            </p>
+            
+        </div>
+
+        <div class="image-section">
+            <img src="bilder/GN1.png" alt="Beispielbild">
+            <img src="bilder/GN2.png" alt="Beispielbild">
+            <img src="bilder/GN3.png" alt="Beispielbild">
+            <div class="image-caption">Erster von Chat Gpt generierter Aufbau der Geschichte </div>
+            <img src="bilder/genprompt.png" alt="">
+            <div class="image-caption">von Chat Gpt generierte Prompts</div>
+        </div>
+    </div>
+
+    <div class="footer-container">
+        <a href="einführung.html" class="footer-link">Einführung</a>
+        <a href="projekt1.html" class="footer-link">Googles Teachable Machine</a>
+        <a href="projekt2.html" class="footer-link">Ollama</a>
+        
+        <a href="fazit.html" class="footer-link">Fazit</a>
+    </div>
+
+</body>
+</html>
