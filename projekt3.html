@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semesterdokumentation SoSe2024</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon-16x16.ico" type="image/x-icon" sizes="16x16">
+    <link rel="icon" href="favicon-32x32.ico" type="image/x-icon" sizes="32x32">
+    <link rel="icon" href="favicon-96x96.ico" type="image/x-icon" sizes="96x96">
+</head>
+<body>
+
+    <div class="header-container">
+        <h1>Dokumentation Sommersemester 2024</h1>
+    </div>
+
+    <div class="content-container">
+        <div class="text-section">
+            <h2>AI Graphic Novel</h2>
+            <p>
+                Generative KI im Bereich der Bilder ist eine Technologie, die eigenständig neue Bilder erschaffen kann, basierend auf gelernten Mustern aus großen Bilddatensätzen. Anstatt nur bestehende Bilder zu verändern, kann sie völlig neue Grafiken, Kunstwerke oder Fotos erzeugen. 
+                </p>
+                <p>
+                Diese KI-Modelle lernen durch das Training mit vielen verschiedenen Bildern, welche Formen, Farben und Texturen zusammengehören. Wird der KI eine Beschreibung wie „ein Alien spielt Schlagzeug“ gegeben, verwendet sie dieses Wissen, um ein neues Bild zu erstellen, das zu dieser Beschreibung passt. Bekannte Beispiele für solche Technologien sind "DALL-E", "Adobe Firefly" oder "Stable Diffusion". 
+                </p> 
+                <p>
+                Für den Graphic Novel fiel die Wahl auf "Adobe Firefly", da diese Applikation neben Voreinstellungen wie Stil oder Referenzbildern auch die Möglichkeit bietet, im Prompt selbst noch Justierungen vorzunehmen. 
+                So kann beispielsweise mit dem Befehl `[avoid = xy]` am Ende eines Firefly-Prompts der KI mitgeteilt werden, dass sie das Konzept in den Klammern weglassen soll. Wird in einem Prompt etwa ein Bauernhof beschrieben, sollen aber keine Schafe enthalten sein, wird dies in die Klammern geschrieben. Mit `[guidance = x]` wird der KI erlaubt, stärker von der Eingabe abzuweichen, wobei die Werte zwischen 0 und 25 liegen. Je niedriger der Wert, desto genauer hält sich die KI an den Prompt. Der Befehl `[raw-style = True]` lässt die KI in ihrer Interpretation sehr frei agieren, was zu überraschenden Ergebnissen führen kann, die möglicherweise nur wenig mit dem ursprünglichen Prompt zu tun haben. 
+                Diese Justierungen können zu einem besseren Ergebnis führen. 
+                </p>
+                <p>
+                Da der Graphic Novel mithilfe künstlicher Intelligenz generiert wird, wurden nicht nur die Bilder, sondern auch die Prompts sowie die Geschichte selbst durch KI erstellt. 
+                Um zunächst eine Basisgeschichte zu entwickeln, wurde eine grobe Handlung entworfen, in die unter anderem eine fiktive Musikrichtung namens "Cyberpunkrock" sowie bestimmte Musikinstrumente wie das "Stylophon" integriert wurden. Der Schlagzeuger von Metallica fungiert dabei als Lehrmeister des kleinen Aliens. 
+                Der erste generierte Aufbau der Geschichte wurde beigefügt. 
+                </p>
+                <p>
+                Nach einigen Feinjustierungen und Korrekturen hat Chat-Gpt, das bevorzugte LLM, die vollständige Geschichte generiert und daraus anschließend die Prompts für Adobe Firefly erstellt. 
+                Einige der fertigen Prompts sind unten angefügt. 
+                </p>
+                <p>
+                Um einen einheitlichen Stil zu erzielen, wurde zunächst ein Bild des Aliens generiert, dessen Stil dem entspricht, was für den Graphic Novel angestrebt wurde. 
+                Dies hat den Vorteil, dass nicht bei jeder Neugenerierung sämtliche Einstellungen berücksichtigt werden müssen und sich die generierten Bilder nicht zu stark voneinander unterscheiden. Farbauswahl und Illustrationsstil sind somit bereits definiert. 
+                Das Referenzbild wird dem Prompt hinzugefügt. 
+                </p>
+                <p>
+                Das Ergebnis ist ein durchgängiger Stil, der zu einem einheitlichen Gesamtbild beiträgt.
+                </p>
+                <p>
+                Mit dem Ergebnis bin ich sehr zufrieden. Es hat Spaß gemacht zu schauen, wie viel man mittlerweile bereits mit simplen künstlichen Intelligenzen erreichen kann und wie man selber Einfluss auf das Ergebnis haben kann, um dieses zu optimieren und anzupassen. 
+                </p>
+                 <p>
+                    Das fertige Projekt ist unter <a href="https://zippi-und-die-musik.netlify.app/">https://zippi-und-die-musik.netlify.app/</a> zu erreichen.
+
+            </p>
+            
+            <img src="bilder/genprompt.png" alt="Prompt von Chat-Gpt für Firefly">
+            <div class="image-caption">von Chat Gpt generierte Prompts</div>
+            
+        </div>
+
+        <div class="image-section">
+            <img src="bilder/GN1.png" alt="Aufbau 1/3">
+            <img src="bilder/GN2.png" alt="Aufbau 2/3">
+            <img src="bilder/GN3.png" alt="Aufbau 3/3">
+            <div class="image-caption">Erster von Chat Gpt generierter Aufbau der Geschichte </div>
+            
+        </div>
+    </div>
+
+    <div class="footer-container">
+        <a href="einführung.html" class="footer-link">Einführung</a>
+        <a href="projekt1.html" class="footer-link">Googles Teachable Machine</a>
+        <a href="projekt2.html" class="footer-link">Ollama</a>
+        
+        <a href="fazit.html" class="footer-link">Fazit</a>
+    </div>
+    <div class="license-container">
+        <p>© 2024 Arne Wiehle. Licensed under the MIT License.</p>
+    </div>
+</body>
+</html>

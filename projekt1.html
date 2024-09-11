@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semesterdokumentation SoSe2024</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="icon" href="favicon-16x16.ico" type="image/x-icon" sizes="16x16">
+    <link rel="icon" href="favicon-32x32.ico" type="image/x-icon" sizes="32x32">
+    <link rel="icon" href="favicon-96x96.ico" type="image/x-icon" sizes="96x96">
+</head>
+<body>
+
+    <div class="header-container">
+        <h1>Dokumentation Sommersemester 2024</h1>
+    </div>
+
+    <div class="content-container">
+        <div class="text-section">
+            <h2>Googles Teachable Machine</h2>
+            <p>
+            Mit Googles Teachable Machine kann man ohne Programmierkenntnisse eigene maschinelle Lernmodelle erstellen. Es bietet die Möglichkeit, Modelle für die Erkennung von Bildern, Geräuschen oder Körperhaltungen zu trainieren, indem man eigene Daten hochlädt oder direkt über die Webcam oder das Mikrofon aufnimmt. Das Tool eignet sich ideal, um schnell neue Ideen zu testen, kreative Projekte zu verwirklichen oder den Umgang mit maschinellem Lernen zu erlernen. 
+            </p>
+            <p>
+            Im Projekt DrinkalotAI wurde eine Bilderkennungsfunktion implementiert, um einen Arbeitsassistenten zu entwickeln, der den Benutzer daran erinnert, während der Computerarbeit ausreichend zu trinken. Die Anwendung basiert auf der Erfassung einer Trinkflasche durch eine externe Webcam, wobei der Füllstand der Flasche mithilfe der Teachable Machine überwacht wird. Ziel ist es, den Benutzer regelmäßig daran zu erinnern, genügend Flüssigkeit zu sich zu nehmen.
+            </p>
+            <p>
+            Damit das System ordnungsgemäß funktioniert, muss zunächst die Teachable Machine von Google trainiert werden. Dieser Prozess besteht darin, verschiedene Klassen mit Beispielinformationen zu versehen. Im Rahmen des Projekts wurde die Machine mit Bilddaten gefüttert. Die verschiedenen Klassen sind nach Füllständen von 0 % bis 100 % benannt. Die eingespeisten Bilder zeigen die Flasche mit dem entsprechenden Füllstand. Jede Klasse wird mit bis zu 200 Bildern versehen, die sich durch verschiedene Lichteinfallswinkel unterscheiden, um falsche Ergebnisse zu vermeiden. 
+            Zur Vermeidung weiterer Messfehler befindet sich die Messflasche in einem festgelegten Setting mit einem fixen Abstand zur Webcam. Der Benutzer muss die Flasche lediglich auf den vorgesehenen Platz stellen, um eine genaue Erfassung zu gewährleisten.
+             </p>
+            <p>
+            Damit sind die Hardware und das Training der Teachable Machine erläutert, jedoch ist das System in dieser Form noch nicht direkt anwendbar. Googles Teachable Machine bietet jedoch die Möglichkeit, trainierte Modelle zu exportieren und in Code einzubinden. Auf diese Weise lässt sich relativ einfach eine Website auf Basis des Modells erstellen.
+            Die Website für dieses Projekt besteht aus einer Landingpage mit einer kurzen Einführung. Von dort gelangt der Benutzer per Startknopf zur Seite, auf der die Teachable Machine eingebunden ist. Auf dieser Seite wird der Füllstand der Flasche als Prozentwert angezeigt. Sobald der Benutzer fertig ist, kann er den End-Button drücken, woraufhin eine dritte Seite erscheint, die eine Gratulation anzeigt. Von dieser Seite aus kann DrinkalotAI auch neu gestartet werden.
+            </p>
+            <p>
+            Ein Problem, das bei diesem Projekt auftritt, besteht darin, dass es nur in dem festgelegten, trainierten Setting funktioniert. Obwohl die Website für alle zugänglich ist, ist sie daher nicht universell anwendbar. Darüber hinaus stellt sich die Frage nach dem Nutzen des Systems, da der Benutzer den Füllstand der Flasche ebenso gut selbst überprüfen könnte, wie es DrinkalotAI tut.
+            </p>
+            <p>
+            Ein Punkt an dem man auf jeden Fall noch weiter machen kann, wäre eine Timerfunktion, wodurch man auch wirklich regelmäßig daran erinnert wird etwas zu trinken, sowie eine Art Endstatistik, aus welcher man entnehmen kann, wie viel tatsächlich getrunken wurde. 
+            Bei dem Versuch dies umzusetzen bin ich selber an meine Grenzen gestoßen, da ich nicht herausgefunden habe, wie ich die von der Teachable Machine erkannten Werte/Klassen weiter verwenden kann. Dies wäre notwendig gewesen, um einen Counter oder andere Klassenabhängige Funktionen hinzuzufügen. 
+            </p>
+            <p>
+            Das Projekt ist in Form einer Website unter <a href="https://drinkalotai.netlify.app/">https://drinkalotai.netlify.app/</a> zu erreichen.
+        </p>
+        </div>
+
+        <div class="image-section">
+            <img src="bilder/mascot.png" alt="mascot">
+            <div class="image-caption">Drinkalot Logo</div>
+            <img src="bilder/bottle.jpg" alt="Aufbau des Setting">
+            <div class="image-caption">Aufbau des Kontrollierten Setting <br>
+            bestehend aus einfarbigem Hintergrund, Wassergefäß und Webcam</div>
+        </div>
+    </div>
+
+    <div class="footer-container">
+        <a href="einführung.html" class="footer-link">Einführung</a>
+       
+        <a href="projekt2.html" class="footer-link">Ollama</a>
+        <a href="projekt3.html" class="footer-link">AI Graphic Novel</a>
+        <a href="fazit.html" class="footer-link">Fazit</a>
+    </div>
+    <div class="license-container">
+        <p>© 2024 Arne Wiehle. Licensed under the MIT License.</p>
+    </div>
+</body>
+</html>
