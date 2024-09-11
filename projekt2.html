@@ -25,7 +25,7 @@
                 Ollama ist ein Werkzeug, das es ermöglicht, ein Large Language Model lokal auf einem Computer auszuführen. Ollama bietet ein sogenanntes Command Line Interface, über das der Benutzer mit dem LLM interagieren kann.
                 </p>
                 <p>
-                Im Rahmen des Projekts wurden zwei Modelle von Ollama verwendet: zum einen das Tinyllama, eine kleinere Version des LLM, die deutlich mehr Zeit zur Berechnung von Ergebnissen benötigt, und Ollama3, ein größeres Modell, das über mehr Parameter verfügt, jedoch auch länger für die Generierung von Antworten braucht.
+                Im Rahmen des Projekts wurden zwei Versionen von Ollama verwendet: zum einen das Tinyllama, eine kleinere Version des LLM, die deutlich mehr Zeit zur Berechnung von Ergebnissen benötigt, und Lllama3 von Meta (ehemals Facebook), eine Versione, die über mehr Parameter verfügt, jedoch auch länger für die Generierung von Antworten braucht.
                 </p>
                 <p>
                 Das Projektkonzept bestand darin, eine Anwendung zu entwickeln, die in der Lage ist, eigenständig 2D-Bilder von Häusern zu konstruieren, um Menschen mit weniger Kreativität eine Inspiration für den Bau eines Hauses zu geben, das aus mehr als nur Wänden und einem Dach besteht. Um dies zu erreichen, wurden in Adobe Illustrator Häuser entworfen und als SVG-Code exportiert. 
@@ -45,18 +45,23 @@
                 Ollama funktioniert, indem Rollen zugewiesen werden, um die Art und den Stil der Antworten zu beeinflussen und zu konkretisieren. So kann beispielsweise die Rolle "narrator" für eine erzählerische Antwort oder "system" für eine präzise, den Anforderungen entsprechende Antwort festgelegt werden. Diese Anforderungen, oder Anweisungen, können in Form von "content" übergeben werden. Hier ein Beispiel aus dem Code:
                 </p>
                 <p>
-                 role: `system` 
-                  content: `You are an SVG generator. You only answer in SVG code. NO markdown. NO backticks. Only the svg xml. Black is only to appear in the same areas as #D9D9D9. The generated code will be used as real svg. This is the SVG-code for a HOUSE, everything between three quotes is the example code: ...`
-              </p>
+                 <code>role: "system" 
+                    content: "You are an SVG generator. You only answer in SVG code. NO markdown. NO backticks. Only the svg xml. Black is only to appear in the same areas as #D9D9D9. The generated code will be used as real svg. This is the SVG-code for a HOUSE, everything between three quotes is the example code: ..."
+               </code>
+             </p>
               <p>
-                Anschließend folgt ein konkretes SVG-Beispiel. Die Rolle "system" hat die Aufgabe, basierend auf dem bereitgestellten SVG-Code neuen, ähnlichen SVG-Code zu generieren, ohne dabei Markdown oder Backticks zu verwenden, damit der generierte Code direkt weiterverwendet werden kann.
+                Anschließend folgt ein konkretes SVG-Beispiel.
+                Die Rolle Role System legt den allgemeinen Kontext und das Verhalten der KI fest. Ihre Aufgabe ist es, basierend auf dem bereitgestellten SVG-Code neuen, ähnlichen SVG-Code zu generieren, ohne dabei Markdown oder Backticks zu verwenden, damit der generierte Code direkt weiterverwendet werden kann.
                 </p>
                 <p>
                 Durch die Verwendung von Großbuchstaben (CAPS) wird festgelegt, dass bestimmte Anweisungen priorisiert werden. Wenn beispielsweise Markdown im Output erscheint, kann der Prompt so angepasst werden, dass mit "NO markdown" sichergestellt wird, dass kein Markdown generiert wird.
                 </p>
                 <p>
-                Die Rolle "assistant" unterstützt die Rolle "system" in diesem Projekt, indem sie weiteren SVG-Code bereitstellt, der dem "system" zur Generierung zusätzlicher Inhalte hilft. Eine wichtige Funktion ist die sogenannte "temperature". 
-                Diese bestimmt den kreativen Spielraum des LLM und legt fest, wie sehr sich das Modell an die Vorgaben halten soll. Bei einem niedrigen Wert weicht das LLM kaum von den Beispieldaten ab, während bei einem hohen Wert die generierten Ergebnisse größere Abweichungen aufweisen können. 
+                Die "Role Assistant" unterstützt die "Role System" in diesem Projekt, indem sie weiteren SVG-Code bereitstellt, der dem "Role System" zur Generierung zusätzlicher Inhalte hilft. 
+                Das "Role System" legt den allgemeinen Kontext und das Verhalten der KI fest. Es definiert anfängliche Anweisungen oder Richtlinien und ist jedoch für den Endnutzer nicht sichtbar. 
+                Der "Role Assistant" repräsentiert die Antworten des KI-Modells, folgt den Vorgaben des "Role System" und tritt direkt mit dem "Role User" in Kontakt. Der "Role User" ist der Mensch, der mit der KI interagiert, indem er Fragen stellt, Aufforderungen gibt oder Befehle erteilt und die Antworten des "Role Assistant" erhält. 
+                Ein wichtiger Parameter ist die sogenannte „Temperature“. Dieser Parameter bestimmt den kreativen Spielraum des LLM (Language Model) und legt fest, wie sehr sich das Modell an die Vorgaben des "Role System" halten soll. 
+                Bei einem niedrigen Wert weicht das LLM kaum von den Beispieldaten ab, während bei einem hohen Wert die generierten Ergebnisse größere Abweichungen aufweisen können. Diese Rollen helfen dabei, die Konversation zu strukturieren und das Verhalten der KI klar zu definieren.
                 </p>
                 <p>
                 Das LLM hat damit eine Aufgabe und gibt als Output SVG-code, welcher direkt in den Html-code gezeichnet wird.
